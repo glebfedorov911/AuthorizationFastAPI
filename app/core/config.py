@@ -18,8 +18,8 @@ class DataBaseSettings(BaseModel):
 class AuthorizationToken(BaseModel):
 
     algorithm: str = os.getenv("ALGORITHM")
-    private_key: Path = (BASE_DIR / CERTS_DIR / os.getenv("PRIVATE_KEY_PATH")).read_text()
-    public_key: Path = (BASE_DIR / CERTS_DIR / os.getenv("PUBLIC_KEY_PATH")).read_text()
+    private_key: str = (BASE_DIR / CERTS_DIR / os.getenv("PRIVATE_KEY_PATH")).read_text()
+    public_key: str = (BASE_DIR / CERTS_DIR / os.getenv("PUBLIC_KEY_PATH")).read_text()
     expired_access_token: int = int(os.getenv("EXPIRED_ACCESS_TOKEN"))
     expired_refresh_token: int = int(os.getenv("EXPIRED_REFRESH_TOKEN"))
 

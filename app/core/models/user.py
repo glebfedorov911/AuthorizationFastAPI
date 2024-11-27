@@ -7,11 +7,11 @@ from sqlalchemy.orm import Mapped, mapped_column
 
 import enum
 
+
 class UserStatus(enum.Enum):
     ACTIVE = "active"
     DELETED = "deleted"
     NOT_CONFIRMED = "not_confirmed"
-
 
 class User(Base):
     username: Mapped[str] = mapped_column(nullable=False, unique=True)

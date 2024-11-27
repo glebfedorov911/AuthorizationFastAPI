@@ -22,13 +22,13 @@ class AbstractTokenCreater(ABC):
         return encoded
 
     @staticmethod
+    def create_expired_time(expiration_time: int):
+        return datetime.datetime.utcnow() + datetime.timedelta(seconds=expiration_time)
+
+    @staticmethod
     def add_expired_time_to_payload(payload: dict, expired_date: datetime.datetime):
         payload.update(exp = expired_date)
         return payload
-
-    @staticmethod
-    def create_expired_time(expiration_time: int):
-        return datetime.datetime.utcnow() + datetime.timedelta(seconds=expiration_time)
 
     def read_token(self, token: str):
         try:

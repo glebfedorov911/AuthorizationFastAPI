@@ -19,5 +19,6 @@ class RegistrationRepository:
     async def createNewUser(self):
         ...
 
+    @property
     def getPassword(self):
         return self.passwordHasher.hashPassword()

@@ -8,8 +8,8 @@ from datetime import datetime
 class UserCreateScheme(BaseModel):
     username: str
     email: str
-    status: UserStatus
-    password: bytes
-    created_at: datetime
-    updated_at: datetime
-    deleted_at: datetime
+    status: UserStatus = UserStatus.NOT_CONFIRMED
+    password: str
+    created_at: datetime = datetime.now()
+    updated_at: datetime = datetime.now()
+    deleted_at: datetime = datetime.now()

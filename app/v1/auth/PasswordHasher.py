@@ -11,5 +11,5 @@ class PasswordHasher:
         return bcrypt.gensalt()
 
     def hashPassword(self):
-        passwordBytes: bytes = bcrypt.hashpw(password=self.password.encode("utf-8"), salt=self.salt)
+        passwordBytes: bytes = bcrypt.hashpw(password=self.password.encode("utf-8"), salt=self.__salt)
         return passwordBytes

@@ -19,5 +19,5 @@ class RegistrationRepository:
         ...
 
     @property
-    def getPassword(self):
+    def getHashPassword(self):
         return self.passwordHasher.hashPassword()
